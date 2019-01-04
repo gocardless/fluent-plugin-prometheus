@@ -98,6 +98,8 @@ module Fluent::Plugin
         info['plugin_category'] == 'output'.freeze
       }
 
+      puts agent_info.inspect
+
       monitor_info = {
         'buffer_queue_length' => @metrics[:buffer_queue_length],
         'buffer_total_queued_size' => @metrics[:buffer_total_queued_size],
