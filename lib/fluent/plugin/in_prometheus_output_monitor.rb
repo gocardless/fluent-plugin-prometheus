@@ -98,8 +98,6 @@ module Fluent::Plugin
         info['plugin_category'] == 'output'.freeze
       }
 
-      puts agent_info.inspect
-
       monitor_info = {
         'buffer_queue_length' => @metrics[:buffer_queue_length],
         'buffer_total_queued_size' => @metrics[:buffer_total_queued_size],
@@ -112,6 +110,10 @@ module Fluent::Plugin
         emit_records: @metrics[:emit_records],
         rollback_count: @metrics[:rollback_count],
       }
+
+      puts "------"
+      puts instance_vars_info.to_json
+      puts "------"
 
       agent_info.each do |info|
         label = labels(info)
