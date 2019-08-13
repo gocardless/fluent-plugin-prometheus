@@ -1,6 +1,7 @@
 require 'prometheus/client'
 require 'prometheus/client/formats/text'
 require 'fluent/plugin/filter_record_transformer'
+require 'fluent/plugin/monkey_patches/prometheus_client.rb'
 
 module Fluent
   module Plugin
